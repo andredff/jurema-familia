@@ -39,9 +39,14 @@ export class IbgeService extends BaseService {
   }
 
   getBeneficiarios(id): Observable<any> {
+
+    const mesAno = 202008;
+    const codigoIbge = '3556602';
+    const pagina = 1;
+
     const response = this.http
       .get(
-        `${this.urlTransparencia}/bolsa-familia-por-municipio?mesAno=202008&codigoIbge=3556602&pagina=1`,
+        `${this.urlTransparencia}/bolsa-familia-por-municipio?mesAno=${mesAno}&codigoIbge=${codigoIbge}&pagina=${pagina}`,
         this.ObterHeaderJson()
       )
       .pipe(map(this.extractData), catchError(this.serviceError));
