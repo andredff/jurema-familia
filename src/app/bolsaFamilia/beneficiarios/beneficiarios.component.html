@@ -1,0 +1,30 @@
+<div class="beneficiarios">
+  <form [formGroup]="form" autocomplete="off">
+    <div class="beneficiarios__dropdown">
+      <div>
+        <h1>Estado</h1>
+        <div class="select">
+          <select name="uf" id="uf" formControlName="estado" (change)="selectUf()">
+            <option selected disabled>Selecione um estado</option>
+            <option *ngFor="let estado of estados" [value]="estado?.id">{{estado?.sigla}}</option>
+
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <h1>Cidade</h1>
+        <div class="select">
+          <select name="cidade" id="cidade" formControlName="cidade" (change)="selectCidade()">
+            <option selected disabled>Selecione uma cidade</option>
+            <option *ngFor="let cidade of cidades" [value]="cidade?.id">{{cidade?.nome}}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="grafico">
+
+</div>

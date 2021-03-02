@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  ibgeKey: '30ce37e6a6f0b7b69871aef4fbacfb31',
+  apiUrlv1: 'http://localhost:5001/api/v1/',
+  ibge: 'https://servicodados.ibge.gov.br/api/v1',
+  transparencia: 'http://www.transparencia.gov.br/api-de-dados'
 };
 
 /*
