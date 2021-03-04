@@ -7,7 +7,6 @@ export abstract class BaseService {
         return {
             headers: new HttpHeaders({
                 'Content-Type': 'application/json',
-                "Accept": "*/*",
             })
         };
     }

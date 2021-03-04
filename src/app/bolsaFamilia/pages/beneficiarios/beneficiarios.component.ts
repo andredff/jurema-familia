@@ -2,12 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { IbgeService } from '../../services/ibge.service';
 
+import * as Chart from 'chart.js';
+
 @Component({
   selector: 'app-beneficiarios',
   templateUrl: './beneficiarios.component.html',
   styleUrls: ['./beneficiarios.component.scss'],
 })
 export class BeneficiariosComponent implements OnInit {
+  canvas: any;
+  ctx: any;
 
   public form: FormGroup;
   public estados: any = [];
@@ -23,6 +27,8 @@ export class BeneficiariosComponent implements OnInit {
 
     this.getUfs();
     this.form.get('cidade').disable();
+
+    this.createChart();
   }
 
   private createForm() {
@@ -71,5 +77,55 @@ export class BeneficiariosComponent implements OnInit {
     });
   }
 
-
+  createChart() {
+    this.canvas = document.getElementById('myChart');
+    this.ctx = this.canvas.getContext('2d');
+    const myChart = new Chart(this.ctx, {
+      type: 'bar',
+      data: {
+        labels: [
+          'Janeiro',
+          'Fevereiro',
+          'Março',
+          'Abril',
+          'Maio',
+          'Junho',
+          'Julho',
+          'Agosto',
+          'Setembro',
+          'Outubro',
+          'Novembro',
+          'Dezembro',
+        ],
+        datasets: [
+          {
+            label: 'Total de familias.',
+            data: [
+              886789,
+              213024,
+              189973,
+              158183,
+              153129,
+              138078,
+              886789,
+              87026,
+              82804,
+              62773,
+              50036,
+              42797,
+            ],
+            backgroundColor: ['green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green', 'green'],
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        legend: {
+          display: false,
+        },
+        responsive: false,
+        display: true,
+      },
+    });
+  }
 }
