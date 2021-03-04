@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BolsaFamiliaAppComponent } from './bolsa-familia.app.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './pages/home/home.component';
 
 const bolsaFamiliaRouterConfig: Routes = [
     {

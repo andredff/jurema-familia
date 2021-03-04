@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { IbgeService } from '../services/ibge.service';
+import { IbgeService } from '../../services/ibge.service';
 
 @Component({
   selector: 'app-beneficiarios',

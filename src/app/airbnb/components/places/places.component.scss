@@ -1,0 +1,109 @@
+@import '/src/app/scss/variables.scss';
+@import '/src/app/scss/mixins.scss';
+
+
+.placesHeader {
+  margin: 24px;
+  &__numbers {
+    font-weight: bold;
+    font-size: 26px;
+    margin: 38px 0;
+  }
+}
+
+.places {
+  margin: 24px;
+  &__images {
+    img {
+      width: 100%;
+    }
+  }
+  &__card {
+    &-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &__info {
+        display: flex;
+        align-items: center;
+      }
+      &__flag {
+        background-color: #771212;
+        color: #FFFFFF;
+        padding: 6px;
+        font-size: 12px;
+        border-radius: 4px;
+        font-weight: bold;
+      }
+      &__title {
+        margin: 0 8px;
+      }
+
+      &__stars {
+        right: 0;
+      }
+    }
+    &-content {
+      &__title{
+        font-size: 18px;
+        margin: 18px 0;
+      }
+      &__info {
+        display: none;
+      }
+    }
+  }
+}
+
+
+@include desktop {
+  .placesHeader {
+    border-bottom: 1px solid #cccccc;
+
+    &__title {
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+  }
+
+  .places {
+    display: flex;
+    border-bottom: solid 1px #cccccc;
+    padding-bottom: 24px;
+    &__images {
+
+    }
+
+    &__card {
+      margin: 0 18px;
+      width: 100%;
+      position: relative;
+      &-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &__stars {
+          margin: 0 24px;
+        }
+      }
+
+      &-content {
+        &__info {
+          display: block;
+          color: #9b9b9b;
+          line-height: 22px;
+        }
+      }
+      &-footer {
+        margin: 0 24px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+    }
+  }
+
+
+}
