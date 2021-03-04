@@ -70,4 +70,6 @@ export class BeneficiariosComponent implements OnInit {
       console.log('beneficiarios', res);
     });
   }
+
+
 }

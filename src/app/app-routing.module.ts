@@ -1,19 +1,25 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
+import { MainComponent } from './main/main.component';
 
 const routes: Routes = [
-  { path: 'bolsa',
-    loadChildren: () => import('./bolsaFamilia/bolsa-familia.module')
-      .then(m => m.BolsaFamiliaModule)
+  { path: '', pathMatch: 'full', component: MainComponent },
+
+  {
+    path: 'bolsafamilia',
+    loadChildren: () =>
+      import('./bolsaFamilia/bolsa-familia.module').then(
+        (m) => m.BolsaFamiliaModule
+      ),
   },
-  { path: '',
-  loadChildren: () => import('./airbnb/airbnb.module')
-    .then(m => m.AirbnbModule)
-},
+  {
+    path: 'airbnb',
+    loadChildren: () =>
+      import('./airbnb/airbnb.module').then((m) => m.AirbnbModule),
+  },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
