@@ -1,0 +1,27 @@
+@import '/src/app/scss/variables.scss';
+@import '/src/app/scss/mixins.scss';
+
+.content {
+
+  .places {
+    width: 100%;
+  }
+
+  .map {
+    display: none;
+  }
+}
+
+
+@include desktop {
+  .content {
+    .places {
+      width: 60%;
+    }
+
+    .map {
+      display: block;
+      width: 40%;
+    }
+  }
+}

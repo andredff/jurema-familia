@@ -6,6 +6,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { HomeComponent } from './home/home.component';
 import { AirbnbRoutingModule } from './airbnb.route';
 import { PlacesComponent } from './components/places/places.component';
+import { MapComponent } from './components/map/map.component';
 
 
 
@@ -14,7 +15,8 @@ import { PlacesComponent } from './components/places/places.component';
     AirbnbAppComponent,
     HomeComponent,
     MenuComponent,
-    PlacesComponent
+    PlacesComponent,
+    MapComponent
   ],
   imports: [
     CommonModule,
