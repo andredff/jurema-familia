@@ -26,8 +26,9 @@
 .toolbar #twitter-logo:hover {
   opacity: 0.8;
 }
+
 .photo {
-display: none;
+  display: none;
 }
 
 
@@ -48,6 +49,8 @@ display: none;
       border: 1px solid #ccc;
       border-radius: 25px;
       margin: 0 6px;
+      align-items: center;
+      display: flex;
     }
   }
 }
@@ -69,6 +72,7 @@ display: none;
 
   .menu {
     display: block;
+
     ul {
       display: flex;
       list-style-type: none;

@@ -19,15 +19,15 @@ export class IbgeService extends BaseService {
     super();
   }
 
-  getUfs(): Observable<any> {
+  public getUfs(): Observable<any> {
     const response = this.http
-      .get(`${this.urlIbge}/localidades/estados`, this.ObterHeaderJson())
+      .get('https://servicodados.ibge.gov.br/api/v1/localidades/estados', this.ObterHeaderJson())
       .pipe(map(this.extractData), catchError(this.serviceError));
 
     return response;
   }
 
-  getCidades(id): Observable<any> {
+  public getCidades(id): Observable<any> {
     const response = this.http
       .get(
         `${this.urlIbge}/localidades/estados/${id}/municipios`,
@@ -38,7 +38,7 @@ export class IbgeService extends BaseService {
     return response;
   }
 
-  getBeneficiarios(id): Observable<any> {
+  public getBeneficiarios(id): Observable<any> {
 
     const mesAno = 202008;
     const codigoIbge = '3556602';
